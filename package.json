@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/m3-chat/sdk/issues"
   },
-  "homepage": "https://github.com/m3-chat/sdk#readme"
+  "homepage": "https://github.com/m3-chat/sdk#readme",
+  "devDependencies": {
+    "@types/node": "^24.0.3"
+  }
 }
