@@ -1,5 +1,5 @@
 import { exit } from "node:process";
-import { ClientTypes, ResponseTypes } from "./types";
+import { BatchResponseTypes, ClientTypes, ResponseTypes } from "./types";
 import { getAvailableModels } from "./utils";
 
 export class M3ChatClient {
@@ -13,10 +13,13 @@ export class M3ChatClient {
     const modelList = getAvailableModels();
     if (!modelList.includes(model)) {
       console.error(
-        `${model} is not an available model.\n Supported models: ${modelList}`
+        `${model} is not an available model.\nSupported models: ${modelList.join(
+          ", "
+        )}`
       );
-      exit();
+      exit(1);
     }
+
     const url = new URL("https://m3-chat.vercel.app/api/gen");
     if (model) url.searchParams.set("model", model);
     if (content) url.searchParams.set("content", content);
@@ -48,5 +51,31 @@ export class M3ChatClient {
       const text = await res.text();
       console.log(text);
     }
+  }
+
+  async batchRequests(
+    messages: string[],
+    options: BatchResponseTypes = {}
+  ): Promise<string[]> {
+    const results: string[] = [];
+
+    for (const content of messages) {
+      const params = new URLSearchParams();
+      params.append("content", content);
+      if (options.model) params.append("model", options.model);
+
+      const res = await fetch(
+        `https://m3-chat.vercel.app/api/gen?${params.toString()}`
+      );
+
+      if (!res.ok) {
+        throw new Error(`Request failed with status ${res.status}`);
+      }
+
+      const data = await res.text();
+      results.push(data);
+    }
+
+    return results;
   }
 }
