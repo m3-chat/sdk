@@ -1,26 +1,27 @@
 # @m3chat SDK
-[![npm version](https://img.shields.io/npm/v/@m3chat/sdk.svg)](https://www.npmjs.com/package/@m3chat/sdk) [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+
+[![npm version](https://img.shields.io/npm/v/@m3chat/sdk.svg)](https://www.npmjs.com/package/@m3chat/sdk) [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE) [![build](https://github.com/m3-chat/sdk/actions/workflows/publish.yml/badge.svg)](https://github.com/m3-chat/sdk/actions/workflows/publish.yml)
 
 `@m3chat/sdk` is the official TypeScript/JavaScript client SDK for **M3 Chat** — a powerful AI chat platform powered by multiple models including LLaMA, Mistral, Qwen, and more. This SDK provides a simple and flexible interface to interact with M3 Chat's API for sending chat messages, streaming responses, batch requests, and model management.
 
 ## Table of Contents
-* [Introduction](https://github.com/m3-chat/sdk?tab=readme-ov-file#m3chat-sdk)
-* [Table of Contents](https://github.com/m3-chat/sdk?tab=readme-ov-file#table-of-contents)
-* [Features](https://github.com/m3-chat/sdk?tab=readme-ov-file#features)
-* [Installation](https://github.com/m3-chat/sdk?tab=readme-ov-file#installation)
-* [Quick Start](https://github.com/m3-chat/sdk?tab=readme-ov-file#quick-start)
-* [Usage](https://github.com/m3-chat/sdk?tab=readme-ov-file#usage)
-    * [Creating a Client](https://github.com/m3-chat/sdk?tab=readme-ov-file#creating-a-client)
-    * [Getting a Response](https://github.com/m3-chat/sdk?tab=readme-ov-file#getting-a-response)
-    * [Batch Requests](https://github.com/m3-chat/sdk?tab=readme-ov-file#batch-requests)
-* [Available Models](https://github.com/m3-chat/sdk?tab=readme-ov-file#available-models)
-* [Error Handling](https://github.com/m3-chat/sdk?tab=readme-ov-file#error-handling)
-* [Development](https://github.com/m3-chat/sdk?tab=readme-ov-file#development)
-* [Contribution](https://github.com/m3-chat/sdk?tab=readme-ov-file#contribution)
-* [License](https://github.com/m3-chat/sdk?tab=readme-ov-file#license)
-* [Contact](https://github.com/m3-chat/sdk?tab=readme-ov-file#contact)
-* [Example Project](https://github.com/m3-chat/sdk?tab=readme-ov-file#example-project)
 
+- [Introduction](https://github.com/m3-chat/sdk?tab=readme-ov-file#m3chat-sdk)
+- [Table of Contents](https://github.com/m3-chat/sdk?tab=readme-ov-file#table-of-contents)
+- [Features](https://github.com/m3-chat/sdk?tab=readme-ov-file#features)
+- [Installation](https://github.com/m3-chat/sdk?tab=readme-ov-file#installation)
+- [Quick Start](https://github.com/m3-chat/sdk?tab=readme-ov-file#quick-start)
+- [Usage](https://github.com/m3-chat/sdk?tab=readme-ov-file#usage)
+  - [Creating a Client](https://github.com/m3-chat/sdk?tab=readme-ov-file#creating-a-client)
+  - [Getting a Response](https://github.com/m3-chat/sdk?tab=readme-ov-file#getting-a-response)
+  - [Batch Requests](https://github.com/m3-chat/sdk?tab=readme-ov-file#batch-requests)
+- [Available Models](https://github.com/m3-chat/sdk?tab=readme-ov-file#available-models)
+- [Error Handling](https://github.com/m3-chat/sdk?tab=readme-ov-file#error-handling)
+- [Development](https://github.com/m3-chat/sdk?tab=readme-ov-file#development)
+- [Contribution](https://github.com/m3-chat/sdk?tab=readme-ov-file#contribution)
+- [License](https://github.com/m3-chat/sdk?tab=readme-ov-file#license)
+- [Contact](https://github.com/m3-chat/sdk?tab=readme-ov-file#contact)
+- [Example Project](https://github.com/m3-chat/sdk?tab=readme-ov-file#example-project)
 
 ## Features
 
@@ -84,8 +85,8 @@ const response = await client.getResponse({
 console.log(response);
 ```
 
-* If `stream` option is enabled, the response is streamed and printed chunk-by-chunk in real time.
-* If disabled, the full response is returned as a string.
+- If `stream` option is enabled, the response is streamed and printed chunk-by-chunk in real time.
+- If disabled, the full response is returned as a string.
 
 ### Batch Requests
 
@@ -131,16 +132,16 @@ The SDK internally validates models against this list:
   "starcoder2:7b",
   "magistral",
   "devstral",
-]
+];
 ```
 
 If an unsupported model is passed, the SDK throws an error.
 
 ## Error Handling
 
-* Throws if the API returns non-OK status.
-* Throws if an invalid model is provided.
-* Throws if streaming response body is missing.
+- Throws if the API returns non-OK status.
+- Throws if an invalid model is provided.
+- Throws if streaming response body is missing.
 
 ## Development
 
@@ -152,7 +153,6 @@ cd sdk
 npm install
 npm run build
 ```
-
 
 ## Contribution
 
