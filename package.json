@@ -4,7 +4,8 @@
   "description": " The JavaScript/TypeScript SDK for interacting with the M3 Chat API. ",
   "main": "dist/index.js",
   "scripts": {
-    "test": "test"
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc --build"
   },
   "repository": {
     "type": "git",
