@@ -1,6 +1,6 @@
 {
   "name": "@m3chat/sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": " The JavaScript/TypeScript SDK for interacting with the M3 Chat API. ",
   "main": "dist/index.js",
   "scripts": {
