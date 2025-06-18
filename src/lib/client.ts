@@ -1,4 +1,4 @@
-import { exit } from "node:process";
+import { exit } from "process";
 import { BatchResponseTypes, ClientTypes, ResponseTypes } from "./types";
 import { getAvailableModels } from "./utils";
 
