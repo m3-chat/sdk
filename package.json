@@ -1,0 +1,26 @@
+{
+  "name": "@m3chat/sdk",
+  "version": "0.0.1",
+  "description": " The JavaScript/TypeScript SDK for interacting with the M3 Chat API. ",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m3-chat/sdk.git"
+  },
+  "keywords": [
+    "sdk",
+    "m3chat",
+    "ai",
+    "api",
+    "library"
+  ],
+  "author": "myfer <https://github.com/myferr>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/m3-chat/sdk/issues"
+  },
+  "homepage": "https://github.com/m3-chat/sdk#readme"
+}
