@@ -1,4 +1,6 @@
+import { exit } from "node:process";
 import { ClientTypes, ResponseTypes } from "./types";
+import { getAvailableModels } from "./utils";
 
 export class M3ChatClient {
   private stream: boolean;
@@ -8,6 +10,13 @@ export class M3ChatClient {
   }
 
   async getResponse({ model, content }: ResponseTypes) {
+    const modelList = getAvailableModels();
+    if (!modelList.includes(model)) {
+      console.error(
+        `${model} is not an available model.\n Supported models: ${modelList}`
+      );
+      exit();
+    }
     const url = new URL("https://m3-chat.vercel.app/api/gen");
     if (model) url.searchParams.set("model", model);
     if (content) url.searchParams.set("content", content);
@@ -41,16 +50,3 @@ export class M3ChatClient {
     }
   }
 }
-
-// Usage example:
-async function main() {
-  const example = new M3ChatClient({
-    stream: true,
-  });
-  await example.getResponse({
-    model: "mistral",
-    content: "Hey, Mistral!",
-  });
-}
-
-main().catch(console.error);
