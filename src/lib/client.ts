@@ -2,7 +2,7 @@ import { exit } from "node:process";
 import { BatchResponseTypes, ClientTypes, ResponseTypes } from "./types";
 import { getAvailableModels } from "./utils";
 
-export class M3ChatClient {
+class M3ChatClient {
   private stream: boolean;
 
   constructor(options: ClientTypes = {}) {
@@ -79,3 +79,5 @@ export class M3ChatClient {
     return results;
   }
 }
+
+export { M3ChatClient };
