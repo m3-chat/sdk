@@ -3,10 +3,6 @@
   "version": "0.0.3",
   "description": " The JavaScript/TypeScript SDK for interacting with the M3 Chat API. ",
   "main": "dist/index.js",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && tsc --build"
